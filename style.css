@@ -1,0 +1,333 @@
+/* Default Parameters */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html, body{
+    font-family: sans-serif;
+    overflow-x: hidden;
+    transition: 0.5s;
+    scroll-behavior: smooth;
+    color: grey;
+    background-color: #121212;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+section{
+    min-height: 100vh;
+}
+.section_heading{
+    display: flex;
+    justify-content: center;
+    font-size: 25px;
+    position: relative;
+    margin-bottom: 25px;
+}
+.section_heading::after{
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 2px;
+    background-color: violet;
+    top: 40px;
+}
+/* Desktop Styling */
+/* @media screen and (min-width: 768px){ */
+    body{
+        display: grid;
+        grid-template-columns: 0.25fr 1fr;
+        grid-template-areas:
+        "sidebar home"
+        "sidebar about"
+        "sidebar project"
+        "sidebar contact"
+        "sidebar footer";
+    }
+    /* Sidebar Section */
+    .side-bar{
+        grid-area: sidebar;
+        display: flex;
+        justify-content: center;
+        min-height: 100vh;
+        padding: 25px 0;
+        background-color: black;
+        color: grey;
+    }
+        .navigation{
+            position: fixed;
+        }
+        .nav-active{
+            background-color: #121212;
+        }
+        .navigation_list{
+            padding: 5px;
+        }
+        .navigation_item{
+            padding: 7px;
+            cursor: pointer;
+            margin: 5px;
+            width: 100%;
+            border-radius: 5px;
+            font-size: 20px;
+            display: grid;
+            grid-template-columns: 0.3fr 1fr;
+        }
+        .navigation_item:hover{
+            background-color: #121212
+        }
+        .img_list{
+            display: flex;
+            justify-content: center;
+        }
+        .img_list:hover{
+            background-color: black;
+        }
+        .my-image{
+            border-radius: 15px;
+            box-shadow: 0 0 1px 2px rgba(0,0,0,0.3);
+        }
+        .navigation_item .fas{
+            padding: 0 5px;
+        }
+
+        .location{
+            display: flex;
+            justify-content: center;
+            font-size: 16px;
+        }
+        .location .fas{
+            padding-right: 7px;
+        }
+        .bar-icon, .cross-icon{
+            display: none;
+        }
+
+    /* Top Section */
+    .home{
+        grid-area: home;
+        padding: 18px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* justify-content: space-around; */
+        /* background-color: azure; */
+    }
+        .home_heading{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 50px 0;
+        }
+        .caps-name{
+            font-size: 50px;
+            color: purple;
+        }
+        .home_heading_list{
+            font-size: 20px;
+        }
+        .home_heading_item{
+            padding: 5px;
+            margin: 5px;
+            cursor: pointer;
+        }
+        .home_heading_ans{
+            padding-left: 25px;
+        }
+        .send-button{
+            border: none;
+            padding: 5px 7px;
+            font-size: 20px;
+            background-color: purple;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    /* About Section */
+    .about{
+        grid-area: about;
+        padding: 18px;
+        /* background-color: pink; */
+    }
+        .about_list{
+            display: grid;
+            grid-template-areas:
+            "one two";
+        }
+        .first_col{
+            grid-area: one;
+        }
+        .second_col{
+            grid-area: two;
+        }
+        .about_item, .project_item{
+            display: flex;
+            margin: 12px;
+            border-radius: 5px;
+            box-shadow: 0 0 2px 1px rgba(255,255,255,0.1);
+            background-color: black;
+            /* height: 50%; */
+        }
+        .second_item, .third_item{
+            justify-content: space-between;
+        }
+        .about_item_desc{
+            padding: 7px;
+            height: 250px;
+        }
+        .about_item_heading{
+            font-weight: 900;
+            padding: 5px;
+        }
+        .about_item_content{
+            padding: 3px 12px;
+            margin: 5px;
+            list-style-type: disc;
+            /* overflow-y: scroll; */
+            /* height: 100%; */
+        }
+        .about_item_img{
+            padding: 12px;
+            font-size: 20px;
+            color: purple;
+            font-size: 25px;
+            display: flex;
+            align-items: center;
+            background-color: azure;
+            /* width: 10%; */
+        }
+        .first_item .about_item_img, .forth_item .about_item_img{
+            /* border-right: 1px solid grey; */
+            margin-right: 8px;
+        }
+        .second_item .about_item_img, .third_item .about_item_img{
+            /* border-left: 1px solid grey; */
+        }
+    /* Project Section */
+    .project{
+        grid-area: project;
+        padding: 18px;
+        /* background-color: rgba(100,100,100,0.7); */
+    }
+        .project_list{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+        .project_item_heading{
+            padding: 7px;
+        }
+    /* Contact Section */
+    .contact{
+        grid-area: contact;
+        padding: 18px;
+        color: grey;
+        /* background-color: #121212; */
+    }
+        .contact_form{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            /* width: 50%; */
+        }
+        .inside_div{
+            display: flex;
+            flex-direction: column;
+            padding: 5px;
+        }
+        .contact_label{
+            font-weight: 700;
+            font-size: 16px;
+        }
+        .inside_div input, .inside_div textarea{
+            border: none;
+            background: black;
+            outline: none;
+            border-radius: 4px;
+            color: grey;
+            padding: 12px;
+            margin: 5px;
+        }
+    /* Footer Section */
+    .footer{
+        grid-area: footer;
+        padding: 18px;
+    }
+/* } */
+
+@media (max-width: 1024px){
+    body{
+        grid-template-columns: auto;
+        grid-template-areas:
+        "home"
+        "about"
+        "project"
+        "contact"
+        "footer";
+    }
+    .bar-icon{
+        display: block;
+        position: fixed;
+        top: 15px;
+        left: 15px;
+        background-color: purple;
+        padding: 7px;
+        font-size: 22px;
+        cursor: pointer;
+        border-radius: 5px;
+        z-index: 2;
+    }
+    .side-bar{
+        position: fixed;
+        left: -500px;
+        top: 0;
+        height: 100%;
+        width: 250px;
+        z-index: 2;
+        transition: left 0.5s ease-in;
+    }
+    .cross-icon{
+        display: block;
+        background-color: black;
+        margin-bottom: 7px;
+        z-index: 3;
+        position: absolute;
+        right: 15px;
+        font-style: 30px;
+        border-radius: 5px;
+        padding: 5px 7px;
+        /* background-color: purple; */
+    }
+    .navigation{
+        padding-top: 15px;
+        position: relative;
+        overflow-y: auto;
+    }
+    .home, .home_heading{
+        align-items: flex-start;
+        padding-top: 15px;
+    }
+    .about_list{
+        grid-template-areas:
+        "one"
+        "two";
+    }
+    .first_col, .second_col{
+        justify-content: flex-start:                                                                                                                                                                                                                                                                                                                                                                                             ;
+    }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+    section{
+        min-width: 50vh;
+    }
+    .home, .home_heading{
+        align-items: center;
+        /* justify-content: center; */
+        padding-top: 25px;
+    }
+}
