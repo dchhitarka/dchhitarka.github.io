@@ -140,11 +140,11 @@ a{
     background-color: #000;
     padding: 40px 60px;
 }
-.projects{
-    background-color: #121212;
+/* .projects{ */
+    /* background-color: #121212; */
     /* align-items: center; */
     /* justify-content: center; */
-}
+/* } */
 .skill-section{
     display: flex;
     flex-direction: column;
@@ -187,6 +187,7 @@ a{
 .project-card{
     height: 100px;
     width: 300px;
+    background-color: #121212;
 }
 .skill-card:hover, .project-card:hover{
     background-color: grey;
@@ -276,11 +277,10 @@ a{
         grid-area: home;
         padding: 18px;
         display: flex;
-        /* justify-content: center; */
-        /* align-items: center; */
         flex-direction: column;
         align-items: center;
-    }
+        background-color: #000;
+}
         .home_heading{
             display: flex;
             flex-direction: column;
@@ -296,6 +296,7 @@ a{
         .home_heading_list{
             font-size: 20px;
             background-color: #000;
+            background-color: #121212;
             border: 1px solid grey;
             border-radius: 8px;
             padding: 16px;
